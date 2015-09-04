@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs"
+    Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table width="100%">
+            <tr valign="top">
+                <td>
+                    <asp:Label ID="Logo" runat="server" Text="<%$ AppSettings:Logo %>"
+                        SkinID="Logo" />
+                </td>
+                <td align="right">
+                    <asp:HyperLink ID="LinkLogout" runat="server" NavigateUrl="Login.aspx">Выход</asp:HyperLink>
+                </td>
+            </tr>
+        </table>
+        <asp:ContentPlaceHolder ID="Content" runat="server">
+        </asp:ContentPlaceHolder>
+        <table width="100%">
+            <tr>
+                <td align="right">
+                    <table cellpadding="6" cellspacing="2" bgcolor="#FFFFCC">
+                        <tr>
+                            <td align="left" bgcolor="white">
+                                <small>Телефоны поддержки:
+                                    <br />
+                                    <asp:Label ID="Phone" runat="server" Text="<%$ AppSettings:Phone %>" />
+                                    (24h)
+                                    <br />
+                                    <asp:Label ID="Phone2" runat="server" Text="<%$ AppSettings:Phone2 %>" />
+                                    <br />
+                                    <asp:Label ID="Phone3" runat="server" Text="<%$ AppSettings:Phone3 %>" />
+                                </small>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
